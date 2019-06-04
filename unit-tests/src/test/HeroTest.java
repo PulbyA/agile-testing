@@ -10,6 +10,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 import codingfactory.rpgconsole.hero.Hero;
+import codingfactory.rpgconsole.game.Starter;
 
 public class HeroTest {
 
@@ -38,7 +39,8 @@ public class HeroTest {
 
 	@Test
 	public void testHeroLevelUp() throws Exception {
-		// TODO
+		game = new game()
+		assertThat(hero, hasProperty("name"));
 	}
 
 	@Test
