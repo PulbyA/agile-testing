@@ -36,8 +36,12 @@ public class FunctionalTest {
         //assertEquals(description, "Partagez vos passions et faites bouger votre ville ! Meetup vous aide à rencontrer des personnes près de chez vous, autour de vos centres d'intérêt.");
         String punchline = driver.findElement(By.cssSelector("h1")).getText();
         assertEquals(punchline, "Le monde vous tend les bras");
-        String sousPunchline = driver.findElement(By.cssSelector("h1")).getText();
+        String sousPunchline = driver.findElement(By.cssSelector("p[class='exploreHome-hero-subTitle text--bold align--center']")).getText();
         assertEquals(sousPunchline, "Rejoignez un groupe local pour rencontrer du monde, tester une nouvelle activité ou partager vos passions.");
+        String inscriptionButton = driver.findElement(By.cssSelector("a[class='button button--primary text--bold']")).getText();
+        assertEquals(inscriptionButton, "Rejoindre Meetup");
+        String inscriptionLink = driver.findElement(By.cssSelector("a[class='button button--primary text--bold']")).getAttribute("href");
+        assertEquals(inscriptionLink, "https://www.meetup.com/fr-FR/register/");
 
     }
 
