@@ -31,6 +31,7 @@ public class EnemyTest {
     public void setUp() throws Exception {
         enemy = new Enemy("Skeleton", 5);
         System.out.println("Avant un test");
+        System.out.println(enemy);
     }
 
     @After
@@ -41,7 +42,7 @@ public class EnemyTest {
     @Test
     public void testTakeDamage() throws Exception {
         int currentHp = enemy.getHp();
-        hero.takeDamage(5);
+        enemy.takeDamage(5);
         int newHp = enemy.getHp();
         assertThat(currentHp, greaterThan(newHp));
     }

@@ -21,6 +21,10 @@ public class Enemy {
         return this.name;
     }
 
+    public Integer getLevel(){
+        return this.level;
+    }
+
     public Integer getHp(){
         return this.hp;
     }
