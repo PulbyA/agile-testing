@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -31,8 +32,13 @@ public class FunctionalTest {
     public void testHomepage() throws Exception {
         driver.get("https://www.meetup.com/fr-FR/");
 		assertEquals(driver.getTitle(), "Partagez vos passions | Meetup");
-		// TODO
-		// To Be Completed By Coders From Coding Factory
+        //String description =  driver.findElement(By.cssSelector("meta[name='description']")).getAttribute("content");
+        //assertEquals(description, "Partagez vos passions et faites bouger votre ville ! Meetup vous aide à rencontrer des personnes près de chez vous, autour de vos centres d'intérêt.");
+        String punchline = driver.findElement(By.cssSelector("h1")).getText();
+        assertEquals(punchline, "Le monde vous tend les bras");
+        String sousPunchline = driver.findElement(By.cssSelector("h1")).getText();
+        assertEquals(sousPunchline, "Rejoignez un groupe local pour rencontrer du monde, tester une nouvelle activité ou partager vos passions.");
+
     }
 
     // Test de la Story n ...
