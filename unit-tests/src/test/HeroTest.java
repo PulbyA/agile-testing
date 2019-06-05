@@ -66,6 +66,14 @@ public class HeroTest {
 	public void testHeroProperties() throws Exception {
 		assertThat(hero, hasProperty("name"));
         assertThat(hero, hasProperty("name", is("Jaina Portvaillant")));
+		assertThat(hero, hasProperty("level"));
+		assertThat(hero, hasProperty("level", is(1)));
+		assertThat(hero, hasProperty("hp"));
+		assertThat(hero, hasProperty("hp", is(20)));
+		assertThat(hero, hasProperty("atk"));
+		assertThat(hero, hasProperty("atk", is(2)));
+
+
 	}
 
 }
