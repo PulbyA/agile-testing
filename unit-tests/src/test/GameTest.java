@@ -38,28 +38,7 @@ public class GameTest {
         System.out.println("Après un test");
     }
 
-    @Test
-    public void testTakeDamage() throws Exception {
-        int currentHp = enemy.getHp();
-        hero.takeDamage(5);
-        int newHp = enemy.getHp();
-        assertThat(currentHp, greaterThan(newHp));
-    }
 
-    @Test
-    public void testAttack() throws Exception {
-        hero = new Hero("Thrall");
-        int currentHpHero = hero.getHp();
-        enemy.attack(hero);
-        assertThat(currentHpHero, greaterThan(hero.getHp()));
-    }
 
-    @Test
-    public void testEnemyProperties() throws Exception {
-        assertThat(enemy, hasProperty("name"));
-        assertThat(enemy, hasProperty("name", is("Skeleton")));
-        assertThat(enemy, hasProperty("level"));
-        //assertThat(enemy, hasProperty("level", is(5)));
-    }
 
 }

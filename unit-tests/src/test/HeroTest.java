@@ -60,6 +60,7 @@ public class HeroTest {
 		hero.levelUp();
 		int newLevel = hero.getLevel();
 		assertThat(newLevel, greaterThan(currentLevel));
+		assertThat(newLevel, equalsTo(currentLevel + 1));
 	}
 
 	@Test
