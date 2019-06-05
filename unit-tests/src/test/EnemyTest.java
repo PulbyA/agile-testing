@@ -31,6 +31,7 @@ public class EnemyTest {
     public void setUp() throws Exception {
         enemy = new Enemy("Skeleton", 5);
         System.out.println("Avant un test");
+        System.out.println(enemy);
     }
 
     @After
