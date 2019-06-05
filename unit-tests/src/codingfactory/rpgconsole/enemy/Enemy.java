@@ -21,8 +21,16 @@ public class Enemy {
         return this.name;
     }
 
+    public Integer getLevel(){
+        return this.level;
+    }
+
     public Integer getHp(){
         return this.hp;
+    }
+
+    public Integer getAtk(){
+        return this.atk;
     }
 
     public void takeDamage(Integer damage){
