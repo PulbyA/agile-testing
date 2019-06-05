@@ -29,6 +29,10 @@ public class Enemy {
         return this.hp;
     }
 
+    public Integer getAtk(){
+        return this.atk;
+    }
+
     public void takeDamage(Integer damage){
         this.hp -= damage;
     }

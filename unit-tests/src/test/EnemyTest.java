@@ -61,6 +61,10 @@ public class EnemyTest {
         assertThat(enemy, hasProperty("name", is("Skeleton")));
         assertThat(enemy, hasProperty("level"));
         assertThat(enemy, hasProperty("level", is(5)));
+        assertThat(enemy, hasProperty("hp"));
+        assertThat(enemy, hasProperty("hp", is(15*enemy.getLevel())));
+        assertThat(enemy, hasProperty("atk"));
+        assertThat(enemy, hasProperty("atk", is(1*enemy.getLevel())));
     }
 
 }
