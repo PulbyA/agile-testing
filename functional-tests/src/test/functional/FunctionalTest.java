@@ -45,9 +45,16 @@ public class FunctionalTest {
 
     }
 
-    // Test de la Story n ...
-    // TODO
-    // To Be Completed By Coders From Coding Factory
+    // Test de la Story #3-recherche https://trello.com/c/xK2N24s7/3-recherche
+    @Test
+    public void testRecherche() throws Exception{
+        driver.get("https://www.meetup.com/fr-FR/find/outdoors-adventure/");
+        assertThat(driver.getTitle(), containsString("Nature et aventure"));
+        String punchline = driver.findElement(By.cssSelector("h1")).getText();
+        assertThat(punchline, containsString("Nature et aventure"));
+        assertThat()
+
+    }
 
     @After
     public void tearDown() throws Exception {
