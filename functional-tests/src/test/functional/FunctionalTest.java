@@ -1,10 +1,12 @@
 package test.functional;
 
 import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
+
 
 import static org.junit.Assert.*;
 
@@ -13,6 +15,7 @@ import static org.hamcrest.Matchers.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FunctionalTest {
@@ -52,9 +55,14 @@ public class FunctionalTest {
         assertThat(driver.getTitle(), containsString("Nature et aventure"));
         String punchline = driver.findElement(By.cssSelector("h1")).getText();
         assertThat(punchline, containsString("Nature et aventure"));
-        assertThat()
+        String defaultSort = driver.findElement(By.cssSelector("span[class='simple-order-copy']")).getText();
+        assertEquals(defaultSort, "pertinence");
+        String otherSort = driver.findElement(By.cssSelector("ul[class='dropdown-menu']")).findElement(By.cssSelector("li")).findElement(By.cssSelector("a")).getText();
+        System.out.println(otherSort);
 
     }
+
+
 
     @After
     public void tearDown() throws Exception {

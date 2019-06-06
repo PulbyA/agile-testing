@@ -29,7 +29,7 @@ public class HomepageSteps {
 	public void beforeScenario() {
 		System.setProperty("webdriver.chrome.driver","/Library/Java/JUNIT/chromedriver");
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
@@ -44,16 +44,30 @@ public class HomepageSteps {
 	}
 
 	@Then("^la description contient \"([^\"]*)\"$")
-	public void la_description_doit_être(String arg1) throws Throwable {
+	public void la_description_contient(String arg1) throws Throwable {
 		// By CSS Selector
 		assertTrue(driver.findElement(By.cssSelector("meta[name='description']")).getAttribute("content").contains(arg1));
 		// By XPATH, si vous préférez...
 	    // assertEquals(driver.findElement(By.xpath("//meta[@name='description']")).getAttribute("content"), arg1);
 	}
 
+	@Then("^la punchline doit être \"([^\"]*)\"$")
+	public void la_punchline_doit_être(String arg1) throws Throwable {
+		assertEquals(driver.findElement(By.cssSelector("h1[class='exploreHome-hero-mainTitle text--display align--center']")).findElement(By.cssSelector("span")).getText(), arg1);
+	}
+
+	@Then("^La sous punchline doit être \"([^\"]*)\"$")
+	public void la_sous_punchline_doit_être(String arg1) throws Throwable {
+		assertEquals(driver.findElement(By.cssSelector("p[class='exploreHome-hero-subTitle text--bold align--center']")).findElement(By.cssSelector("span")).getText(), arg1);
+	}
+
+
 	@After
 	public void afterScenario() {
 		driver.quit();
 	}
+
+
+
 
 }
