@@ -12,5 +12,10 @@ Feature: Fonctionnalités de ma page d'accueil
 		And le bloc des "Groupes près de vous" est présent
 		When je clic sur le bouton "Voir tout"
 		Then je suis sur la page "https://www.meetup.com/fr-FR/find/"
-		And la recherche est initialisé sur un rayon de "5km" autour de "Paris", FR
+		And la recherche est initialisé sur un rayon de "25km" autour de "Paris", FR
+	Scenario: Pouvoir s'inscrire depuis la homepage
+		Given je suis sur la homepage
+		And le bouton inscription contient "Rejoindre Meetup"
+		When je clic sur le bouton d'inscription "Rejoindre Meetup"
+		Then je suis sur la page "https://secure.meetup.com/register/?_locale=fr-FR"
 

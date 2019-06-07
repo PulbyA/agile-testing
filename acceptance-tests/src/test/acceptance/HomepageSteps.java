@@ -68,7 +68,7 @@ public class HomepageSteps {
 
 	@When("^je clic sur le bouton \"([^\"]*)\"$")
 	public void je_clic_sur_le_bouton(String arg1) throws Throwable {
-		assertEquals(driver.findElement(By.cssSelector("a[href='https://www.meetup.com/fr-FR/find/'] span")).getText(), arg1);
+		assertEquals(driver.findElement(By.cssSelector("a[href='https://www.meetup.com/fr-FR/find/']")).getText(), arg1);
 		driver.findElement(By.cssSelector("a[href='https://www.meetup.com/fr-FR/find/']")).click();
 	}
 
@@ -79,9 +79,20 @@ public class HomepageSteps {
 
 	@Then("^la recherche est initialisé sur un rayon de \"([^\"]*)\" autour de \"([^\"]*)\", FR$")
 	public void la_recherche_est_initialisé_sur_un_rayon_de_autour_de_FR(String arg1, String arg2) throws Throwable {
-		assertEquals(driver.findElement(By.cssSelector("div[class='dropdown callout center] a[class=.dropdown-toggle']")), arg1);
-		assertEquals(driver.findElement(By.cssSelector("div[class='dropdown callout center location-display'] a[class='dropdown-toggle']")), arg2);
+		assertEquals(driver.findElement(By.cssSelector("div[class='dropdown callout center'] a[class='dropdown-toggle']")).getText(), arg1);
+		assertEquals(driver.findElement(By.cssSelector("div[class='dropdown callout center location-display'] a[class='dropdown-toggle']")).getText(), arg2);
 	}
+
+	@Given("^le bouton inscription contient \"([^\"]*)\"$")
+	public void le_bouton_inscription_contient(String arg1) throws Throwable {
+		assertEquals(driver.findElement(By.cssSelector("a[href='https://www.meetup.com/fr-FR/register/']")).getText(), arg1);
+	}
+
+	@When("^je clic sur le bouton d'inscription \"([^\"]*)\"$")
+	public void je_clic_sur_le_bouton_d_inscription(String arg1) throws Throwable {
+		driver.findElement(By.cssSelector("a[href='https://www.meetup.com/fr-FR/register/']")).click();
+	}
+
 
 	@After
 	public void afterScenario() {
