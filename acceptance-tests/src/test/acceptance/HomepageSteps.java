@@ -61,6 +61,27 @@ public class HomepageSteps {
 		assertEquals(driver.findElement(By.cssSelector("p[class='exploreHome-hero-subTitle text--bold align--center']")).findElement(By.cssSelector("span")).getText(), arg1);
 	}
 
+	@Given("^le bloc des \"([^\"]*)\" est présent$")
+	public void le_bloc_des_est_présent(String arg1) throws Throwable {
+		assertEquals(driver.findElement(By.cssSelector("section[class='section e2e-guest-home-page-groups-near-you']")).findElement(By.cssSelector("h2[class='text--sectionTitle']")).getText(), arg1);
+	}
+
+	@When("^je clic sur le bouton \"([^\"]*)\"$")
+	public void je_clic_sur_le_bouton(String arg1) throws Throwable {
+		assertEquals(driver.findElement(By.cssSelector("a[href='https://www.meetup.com/fr-FR/find/'] span")).getText(), arg1);
+		driver.findElement(By.cssSelector("a[href='https://www.meetup.com/fr-FR/find/']")).click();
+	}
+
+	@Then("^je suis sur la page \"([^\"]*)\"$")
+	public void je_suis_sur_la_page(String arg1) throws Throwable {
+		assertEquals(driver.getCurrentUrl(), arg1);
+	}
+
+	@Then("^la recherche est initialisé sur un rayon de \"([^\"]*)\" autour de \"([^\"]*)\", FR$")
+	public void la_recherche_est_initialisé_sur_un_rayon_de_autour_de_FR(String arg1, String arg2) throws Throwable {
+		assertEquals(driver.findElement(By.cssSelector("div[class='dropdown callout center] a[class=.dropdown-toggle']")), arg1);
+		assertEquals(driver.findElement(By.cssSelector("div[class='dropdown callout center location-display'] a[class='dropdown-toggle']")), arg2);
+	}
 
 	@After
 	public void afterScenario() {

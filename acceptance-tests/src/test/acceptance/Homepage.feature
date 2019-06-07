@@ -10,7 +10,7 @@ Feature: Fonctionnalités de ma page d'accueil
 	Scenario: Accéder aux événements près de chez soi depuis la page d'accueil
 		Given je suis sur la homepage
 		And le bloc des "Groupes près de vous" est présent
-		When je clic sur le bouton "voir tout"
+		When je clic sur le bouton "Voir tout"
 		Then je suis sur la page "https://www.meetup.com/fr-FR/find/"
 		And la recherche est initialisé sur un rayon de "5km" autour de "Paris", FR
 
